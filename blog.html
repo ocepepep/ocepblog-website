@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+
+<style>     
+       body {
+        background-color: azure;
+       }
+        h1 {
+        color: skyblue;
+        font-family: impact;
+        font-size: 250%;
+        }
+
+        h2 {
+            color: pink;
+            font-family: verdana;
+            font-size: 175%;
+        }
+        
+        p {
+            color: black;
+            font-family: Courier;
+            font-size: 160%;
+            border: 2px solid powderblue;
+            
+        }
+
+        #div1 {
+            width: 500px;
+            height: 150px;
+            padding: 25px;
+            border: 1px solid #aaaaaa;
+        }
+
+   </style>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+
+    <script>
+        function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+    </script>
+</head>
+<body>
+<h1>My life Journey . . </h1>
+
+<hr>
+
+<b><p>Hello</p></b> 
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img id="drag1" src="h.png" draggable="true" ondragstart="drag(event)" width="500" height="150">
+</body>
+</html>
